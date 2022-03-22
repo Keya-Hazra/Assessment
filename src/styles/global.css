@@ -1,0 +1,32 @@
+
+body {
+  font-family: 'Poppins','Roboto', sans-serif;
+}
+
+/**  custom scrollbar **/
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
