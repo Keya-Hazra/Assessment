@@ -1,5 +1,4 @@
  /* eslint-disable */ 
-import Footer from './Footer'
 import Home from './Home'
 
 
@@ -10,9 +9,7 @@ function Landing() {
       <div>
         <Home />
       </div>
-    <div>
-        <Footer />
-      </div>
+  
 
     </div>
   )

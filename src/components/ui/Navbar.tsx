@@ -49,10 +49,28 @@ function Navbar() {
 
             <div className="flex space-x-4">
               <a
-                href="#home"
+                href="/"
                 className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
               >
                 Home
+              </a>
+          
+            </div>
+             <div className="flex space-x-4">
+              <a
+                href="/landing/ProductsDetails/:id"
+                className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
+              >
+                Product Details
+              </a>
+          
+            </div>
+             <div className="flex space-x-4">
+              <a
+                href="/landing/CheckOut"
+                className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
+              >
+               Check Out Page
               </a>
           
             </div>
@@ -95,14 +113,43 @@ function Navbar() {
              placeholder="Search items and collections"
            />
          </button>
-         <a
+         {/* <a
            onClick={handleLinkOnClick}
            href="#home"
            className="block p-2 font-semibold transition-all duration-300 rounded-md hover:text-white hover:bg-primaryLight hover:opacity-75"
          >
           Home
-         </a>
-      
+         </a> */}
+      <div className="flex space-x-4">
+              <a
+                onClick={handleLinkOnClick}
+                href="/"
+                className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
+              >
+                Home
+              </a>
+          
+            </div>
+             <div className="flex space-x-4">
+              <a
+                onClick={handleLinkOnClick}
+                href="/landing/ProductsDetails/:id"
+                className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
+              >
+                Product Details
+              </a>
+          
+            </div>
+             <div className="flex space-x-4">
+              <a
+                onClick={handleLinkOnClick}
+                href="/landing/CheckOut"
+                className="px-4 py-1 font-medium text-white transition duration-1000 rounded lg:px-4 hover:text-primaryLight"
+              >
+               Check Out Page
+              </a>
+          
+            </div>
 
        </div>
        )}

@@ -1,52 +1,47 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-
-interface ICart{
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    image: string;
-    rating: {
-      rate:number;
-      count: number;
-    }
-  }  
-
-interface  ICartReducer {
-  cart?: ICart[];
-
+export interface IProduct {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
-const initialState: ICartReducer = {cart:[]};
+interface ICartReducer {
+  cart: IProduct[];
+}
 
- const cartReducer = createSlice({
+const initialState: ICartReducer = {
+  cart: [
+    {
+      id: 19,
+      title: 'string',
+      price: 19,
+      description: 'string',
+      category: 'string',
+      image: 'string',
+      rating: {
+        rate: 19,
+        count: 19,
+      },
+    },
+  ],
+};
+
+const cartReducer = createSlice({
   name: 'cartReducer',
   initialState,
   reducers: {
-    addToCartAction: (state, action: PayloadAction<ICart>) => {
-      
- const newProduct: ICart = {
-    id: action.payload.id,
-    title: action.payload.title,
-    price: action.payload.price,
-    description: action.payload.description,
-    category: action.payload.category,
-    image: action.payload.image,
-    rating: {
-      rate:action.payload.rating.rate,
-      count:action.payload.rating.count,
-    }
-  };
-      return {
-        ...state,
-        // cart: state.cart.push(newProduct),
-        cart: action.payload,
-      };
+    addToCartAction: (state: ICartReducer, action: PayloadAction<IProduct>) => {
+      state.cart = [...state.cart, action.payload];
+      return state;
     },
-  
-  
   },
 });
 

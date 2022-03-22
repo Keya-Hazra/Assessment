@@ -47,6 +47,7 @@ function Home() {
 
   return (
     <>
+      <h1 className="text-xl text-purple-500">Products List</h1>
       <TableContainer>
           <Table>
             <TableHead>
