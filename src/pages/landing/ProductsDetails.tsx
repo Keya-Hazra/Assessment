@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AssessmentApi } from "../../config";
 import { addToCartAction, IProduct } from "../../stores/CartReducer";
   
@@ -16,6 +16,7 @@ import { addToCartAction, IProduct } from "../../stores/CartReducer";
   return response.data;
 };
 function ProductsDetails() {
+    const navigate = useNavigate();
    const params = useParams();
   const [, setError] = useState<string>();
   const dispatch = useDispatch();
@@ -43,7 +44,8 @@ function ProductsDetails() {
     console.log(74, productsDetails.data);
     try {
      if(productsDetails.data){dispatch(addToCartAction(productsDetails.data))}
-     
+    navigate('/landing/CheckOut');
+   
     
     } catch (error: any) {
       setError(error?.response?.data?.message || 'Something went wrong!');
@@ -72,7 +74,7 @@ function ProductsDetails() {
                   <p className="col-span-2 font-semibold">Category:</p>
                   <p className="col-span-4">{productsDetails.data.category}</p>
                   <p className="col-span-2 font-semibold">Image:</p>
-                  <p className="col-span-4">{productsDetails.data.image}</p>
+                  <p className="col-span-4"> <img src={productsDetails.data.image} alt="" /> </p>
                   <p className="col-span-2 font-semibold">rate:</p>
                   <p className="col-span-4">{productsDetails.data.rating.rate}</p>
                   <p className="col-span-2 font-semibold">Count:</p>

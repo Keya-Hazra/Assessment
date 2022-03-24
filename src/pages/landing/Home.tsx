@@ -97,8 +97,8 @@ function Home() {
                       <span> {v.category}</span>
                     </TableCell>
                     <TableCell className="text-white">
-                      <span> {v.image}</span>
-                    </TableCell>
+                      <img src={v.image} alt="" />
+                      </TableCell>
                     <TableCell className="text-white">
                       <span> {v.rating.rate}</span>
                     </TableCell>
